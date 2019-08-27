@@ -8,15 +8,8 @@ interface IProps {
     searchStarWars: (filmsTitle: string) => void
 }
 
-class Output extends React.Component <IProps> {
-    constructor(props: IProps) {
-        super();
-
-    }
-
-    render() {
-        return(
-            <div></div>
-        );
-    }
+const Output = (props: IProps) => {
+    return(
+        <div></div>
+    );
 }

@@ -1,13 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import StarWarsApi from "./StarWars/Components/Section/SearchStarWars";
+// import SearchStarWars from './StarWars/Components/Section/SearchStarWars';
+import TitleFilms from './StarWars/Components/Section/TitleFilms';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <StarWarsApi />
+        <TitleFilms />
       </header>
     </div>
   );

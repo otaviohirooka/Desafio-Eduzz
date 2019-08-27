@@ -2,6 +2,7 @@
 
 @import 'header.css';
 @import 'section.css';
+@import 'title-films.css';
 
 * {
     box-sizing: border-box;
