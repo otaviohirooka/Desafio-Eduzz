@@ -1,3 +1,5 @@
+import '../../css/index.css';
+
 import React from "react";
 
 interface IProps {
@@ -19,8 +21,8 @@ class AboutFilms extends React.Component<IProps> {
     render() {
         if (this.state.about.length === 0) {
             return (
-                <div className="filme-button">
-                    <button onClick={this.getAbout}>About</button>
+                <div className="button-episode">
+                    <div onClick={this.getAbout}>About episode</div>
                 </div>
             );
         }

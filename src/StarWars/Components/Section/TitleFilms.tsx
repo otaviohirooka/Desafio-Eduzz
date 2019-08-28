@@ -1,3 +1,5 @@
+import '../../css/index.css'; 
+
 import React from "react";
 
 import AboutFilms from './AboutFilms';
@@ -5,6 +7,18 @@ import AboutFilms from './AboutFilms';
 interface ITitleFilms {
     title: string;
     episode_id: number;
+    opening_crawl: string;
+    director: string;
+    producer: string;
+    release_date: string;
+    characters: string[];
+    planets: string[];
+    starships: string[];
+    vehicles: string[];
+    species: string[];
+    created: Date;
+    edited: Date;
+    url: string;
 }
 
 interface IState {
@@ -16,20 +30,11 @@ class TitleFilms extends React.Component <any, IState> {
         titlefilms: []
     };
     
-    getTitle = (titlefilms: ITitleFilms[]) => {
-        console.log(titlefilms);
-        return titlefilms;
-        //const filmsNames = ["A New Hope", "Attack of the Clones", "The Phantom Menace", "Revenge of the Sith", "Return of the Jedi", "The Empire Strikes Back", "The Force Awakens"];
-        //return titlefilms.filter((sw) => filmsNames.includes(sw.title));
-    }
-    
-
     async componentDidMount() {
         const response = await fetch("https://swapi.co/api/films/");
         const allTitle = await response.json();
-        
-        const titleSw = this.getTitle(allTitle);
-        this.setState({ titlefilms: titleSw });
+    
+       this.setState({ titlefilms: allTitle.results });
         
     }
 
@@ -39,7 +44,7 @@ class TitleFilms extends React.Component <any, IState> {
                 {this.state.titlefilms.map((sw: any) => {
                     return (
                         <div key={sw.episode_id} className="sw-title">
-                            <h3>{sw.title}</h3>
+                            <h3 className="sw-title">{sw.title}</h3>
                             <div>
                                 <AboutFilms id={sw.episode_id}/>
                             </div>

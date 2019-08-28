@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-// import SearchStarWars from './StarWars/Components/Section/SearchStarWars';
-import TitleFilms from './StarWars/Components/Section/TitleFilms';
+
+import Header from './StarWars/Components/Header/Header';
+import Section from './StarWars/Components/Section/Section';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <TitleFilms />
+        <Header />
+        <Section />
       </header>
     </div>
   );
