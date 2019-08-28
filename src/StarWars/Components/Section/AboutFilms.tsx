@@ -10,7 +10,7 @@ class AboutFilms extends React.Component<IProps> {
     };
 
     getAbout = async () => {
-        const response = await fetch(`https://swapi.co/api/films/${this.props.id}.json`);
+        const response = await fetch(`https://swapi.co/api/films/${this.props.id}/`);
         const about = await response.json();
 
         this.setState({about: about});

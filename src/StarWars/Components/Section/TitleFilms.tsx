@@ -15,18 +15,22 @@ class TitleFilms extends React.Component <any, IState> {
     state = {
         titlefilms: []
     };
-
+    
     getTitle = (titlefilms: ITitleFilms[]) => {
-        const filmsNames = ["A New Hope", "Attack of the Clones", "The Phantom Menace", "Revenge of the Sith", "Return of the Jedi", "The Empire Strikes Back", "The Force Awakens"];
-        return titlefilms.filter((sw) => filmsNames.includes(sw.title));
+        console.log(titlefilms);
+        return titlefilms;
+        //const filmsNames = ["A New Hope", "Attack of the Clones", "The Phantom Menace", "Revenge of the Sith", "Return of the Jedi", "The Empire Strikes Back", "The Force Awakens"];
+        //return titlefilms.filter((sw) => filmsNames.includes(sw.title));
     }
+    
 
     async componentDidMount() {
-        const response = await fetch("https://swapi.co/api/films.json");
+        const response = await fetch("https://swapi.co/api/films/");
         const allTitle = await response.json();
-
+        
         const titleSw = this.getTitle(allTitle);
         this.setState({ titlefilms: titleSw });
+        
     }
 
     render() {
